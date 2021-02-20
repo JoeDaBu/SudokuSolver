@@ -1,5 +1,5 @@
 from puzzles import *
-from solver import print_puzzle, solve, contrast
+from solver import print_puzzle, solve, contrast, solve_puzzle
 
 x = [[8," "," "," ",2," ",9,1," "],
      [2,3,4,5,1," "," "," ",7],
@@ -31,7 +31,8 @@ z = [[1,2,3,4,5,6,7,8,9],
 
 # print(validate(x))
 # print_puzzle(x)
-print_puzzle(solve(x))
+print_puzzle(solve_puzzle(x))
+print(validate_sol(x))
 # print(contrast([1, 2, 3, 4], [5, 6, 4]))
 # print(array_same([1,2],[]))
 # print(array_same([1,2],[1,2]))

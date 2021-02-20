@@ -84,10 +84,13 @@ def find_possible_values(puzzle, i, x):
         raise NoPossibilities(possible_values)
     return possible_values
 
+def solve_puzzle(puzzle):
+    return solve(puzzle,0,0)
 
-def solve(puzzle):
-    for i in range(9):
-        x = 0
+def solve(puzzle, i, x):
+    i = i
+    x = x
+    while i < 9:
         while x < 9:
             if puzzle[i][x] == BLANK:
                 try:
@@ -98,7 +101,7 @@ def solve(puzzle):
                 for value in possible_values:
                     puzzle[i][x] = value
                     try:
-                       return solve(puzzle)
+                       return solve(puzzle, i, x)
                     except IncorrectVariant:
                         puzzle[i][x] = BLANK
 
@@ -108,6 +111,8 @@ def solve(puzzle):
                     raise IncorrectVariant(puzzle)
 
             x += 1
+        x = 0
+        i += 1
     return puzzle
 
 
@@ -119,7 +124,7 @@ class Solver:
         return print_puzzle(self.puzzle)
 
     def solve_puzzle(self, puzzle):
-        self.puzzle = solve(puzzle)
+        self.puzzle = solve_puzzle(puzzle)
 
 
 class NoPossibilities(Exception):
