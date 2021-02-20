@@ -1,6 +1,5 @@
 from itertools import count
 
-
 BLANK = " "
 
 
@@ -22,9 +21,9 @@ def print_puzzle(puzzle):
 
 def contains_duplicate(numbers):
     for number in numbers:
-        if count(number) != 1:
-            return False
-    return True
+        if numbers.count(number) != 1:
+            return True
+    return False
 
 
 def row_values(puzzle, i):
@@ -84,8 +83,14 @@ def find_possible_values(puzzle, i, x):
         raise NoPossibilities(possible_values)
     return possible_values
 
+
 def solve_puzzle(puzzle):
-    return solve(puzzle,0,0)
+    try:
+        return solve(puzzle, 0, 0)
+    except IncorrectVariant:
+        print("No Solution")
+        raise NoSolution
+
 
 def solve(puzzle, i, x):
     i = i
@@ -101,7 +106,7 @@ def solve(puzzle, i, x):
                 for value in possible_values:
                     puzzle[i][x] = value
                     try:
-                       return solve(puzzle, i, x)
+                        return solve(puzzle, i, x)
                     except IncorrectVariant:
                         puzzle[i][x] = BLANK
 

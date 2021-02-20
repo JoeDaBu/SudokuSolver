@@ -28,11 +28,29 @@ z = [[1,2,3,4,5,6,7,8,9],
      [1,2,3,4,5,6,7,8,9],
      [1,2,3,4,5,6,7,8,9],
      [1,2,3,4,5,6,7,8,9]]
+expert = [[" "," ",7," ",3," "," ",9,6],
+          [" "," ",4,1," "," "," ",5," "],
+          [3," "," "," "," ",5," "," "," "],
+          [" "," "," "," ",7,8,9," "," "],
+          [" "," "," "," "," "," ",1," "," "],
+          [" "," "," "," ",6," ",3," ",4],
+          [6," ",2," "," ",4," "," "," "],
+          [" "," ",1," "," ",7," "," "," "],
+          [5," "," "," "," "," ",8," "," "]]
+unsolvable = [[5,1,6,8,4,9,7,3,2],
+              [3," ",7,6," ",5," "," "," "],
+              [8," ",9,7," "," "," ",6,5],
+              [1,3,5," ",6," ",9," ",7],
+              [4,7,2,5,9,1," "," ",6],
+              [9,6,8,3,7," "," ",5," "],
+              [2,5,3,1,8,6," ",7,4],
+              [6,8,4,2," ",7,5," "," "],
+              [7,9,1," ",5," ",6," ",8]]
 
-# print(validate(x))
+# print(valid_puzzle(x))
 # print_puzzle(x)
-print_puzzle(solve_puzzle(x))
-print(validate_sol(x))
+# print_puzzle(solve_puzzle(x))
+# print(validate_sol(x))
 # print(contrast([1, 2, 3, 4], [5, 6, 4]))
 # print(array_same([1,2],[]))
 # print(array_same([1,2],[1,2]))
@@ -40,3 +58,12 @@ print(validate_sol(x))
 # print(validate_sol(x))
 # print(validate_sol(y))
 # print(validate_sol(z))
+# print(valid_puzzle(expert))
+# print_puzzle(expert)
+# print_puzzle(solve_puzzle(expert))
+# print(validate_sol(expert))
+
+print(valid_puzzle(unsolvable))
+print_puzzle(unsolvable)
+print_puzzle(solve_puzzle(unsolvable))
+print(validate_sol(expert))
