@@ -1,5 +1,5 @@
 from puzzles import *
-from solver import print_puzzle, solve, contrast, solve_puzzle
+from solver import print_puzzle, solve, contrast, solve_puzzle, Solver
 
 x = [[8," "," "," ",2," ",9,1," "],
      [2,3,4,5,1," "," "," ",7],
@@ -63,7 +63,9 @@ unsolvable = [[5,1,6,8,4,9,7,3,2],
 # print_puzzle(solve_puzzle(expert))
 # print(validate_sol(expert))
 
-print(valid_puzzle(unsolvable))
-print_puzzle(unsolvable)
-print_puzzle(solve_puzzle(unsolvable))
-print(validate_sol(expert))
+# print(valid_puzzle(unsolvable))
+# print_puzzle(unsolvable)
+# print_puzzle(solve_puzzle(unsolvable))
+# print(validate_sol(expert))
+solved = Solver(x)
+print(solved)

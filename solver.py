@@ -128,6 +128,9 @@ class Solver:
     def __repr__(self):
         return print_puzzle(self.puzzle)
 
+    def __str__(self):
+        return str(self.puzzle)
+
     def solve_puzzle(self, puzzle):
         self.puzzle = solve_puzzle(puzzle)
 
